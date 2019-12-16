@@ -126,7 +126,7 @@ char * traceback(char ** table, char x, char y)
 					y--;
 			}
 		}
-		if(table[x][y] == 0 && (table[x-1][y-1] == 0 || table[x-1][y-1] > 40))
+		if(table[x][y] == 0 && (table[x-1][y-1] == 0 || table[x-1][y-1] >= 45))
 			return result;
 		i++;
 	}
@@ -143,7 +143,7 @@ int main(int argc, char const *argv[])
 	char match = 3, mismatch = 3, gap = 2;
 
 	char ** table;
-	for (size_t i = 0; i < 1000; i++){
+	for (size_t i = 0; i < strlen(str) / 10; i++){
 		printFillTable(test, tmp, match, mismatch, gap);
 		tmp += 10;	
 	}
